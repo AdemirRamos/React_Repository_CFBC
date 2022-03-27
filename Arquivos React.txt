@@ -1,0 +1,1798 @@
+import React from 'react' //Importação do conteúdo "React".
+
+//As imagens dentro de "src" são carregadas da seguinte maneira:
+
+import SFTD from './componentes/Imagens/s.png'
+
+//import / nome do arquivo / endereço
+
+export default function App() { //Esta função deve ter o mesmo nome do arquivo.
+  
+  //Esta função deve retornar algo para quem a chamou.
+
+  //Os códigos JS deve ir antes de "return":
+
+  //const canal = 'CFB Cursos'
+  const curso = 'Curso de React'
+  
+  const canal = () => {
+    return ('CFB Cursos')
+  }
+
+  function course() {
+    return ('CFB Cursos')
+  }
+
+  //Já dentro de "return", eles devem ser alocados com chaves:
+
+  return ( //Só pode ser retornado um componente (tudo dentro de "return").
+    <section> 
+
+      <header>
+
+        <p>{`Canal: ${canal()}`}</p>
+
+        <p>Anotação: Em React, toda "tag" deve ter uma indicação de fim de comando (/) [/: quando a "tag" não tem fechamento]:</p>
+
+        <br/>
+
+        <p>{`${curso} | ${course()}`}</p>
+
+      </header>
+
+      <div>
+
+        <p/>O componente retornado pode ser uma "section" (ou outro elemento) - [retornado para as "<></>" após "return"].<p/>
+
+        <p>Inserindo uma imagem através de "src":</p>
+
+        <img src={SFTD}/>
+
+        <p>Inserindo uma imagem desde "public":</p>
+
+        <img src='/Imagens/s.png'/>
+
+      </div>
+
+    </section>
+  )
+}
+
+//O conteúdo em "src" está no "servidor"; o conteúdo em "public" está externo ao "servidor".
+//Em outras palavras: "src" é o lado do App React; "public" é fora do App.
+//P. S.: "servidor" vai entre aspas porque o React roda do lado do cliente.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React from 'react'
+
+//Importando o componente "header()":
+
+import Header from './componentes/header'
+
+//Em azul, após "import", vem o nome do componente - este nome é facultativo.
+
+import Corpo from './componentes/corpo'
+
+import Dados from './componentes/dados'
+
+//Importação do arquivo CSS:
+
+import './app01.css'
+
+//"Props" nos permite enviar propriedades, dados, valores, funções, et cetera, para diferentes componentes.
+
+const channel = ' Conteúdo de "channel": CFB Cursos.'
+const utube = ' Conteúdo de "utube": CFB Cursos.'
+const course = ' Conteúdo de "course": Curso de React.'
+
+//Inserção de CSS: A inserção de CSS pode ser feita "inline", incorporado ou externo.
+
+//Em React, se sugere a utilização de classes para formatações de páginas.
+
+//Em React, caso a formatação CSS seja feita "inline" ou incorporada, ele seguirá a mesma notação do JS;
+//Caso seja CSS externo, a notação será a mesma do CSS.
+//Para separar as diferentes formatações, em React, usamo vírgula (,) e não ponto e vírgula (;).
+//Se usa chaves duplas quando a formatação for feita através do CSS "inline";
+//Quando não for o caso, não é necessário usar chaves duplas.
+
+//Criando constantes com códigos para formatação e, posteriormente aplicando-as à página, configura o equivalente ao CSS incorporado.
+
+//Para se trabalhar com o CSS externo, se pode usar o "App.css" ou criar um novo arquivo com a extenção "css".
+
+//Caso o arquivo CSS seja importado para o componente-pai, não será necessário importá-lo para os demais componentes da página.
+
+//Em React, para aplicação de classes, diferentemente de CSS, usamos "className".
+
+//Para formatar o "body" da página, se pode criar um arquivo CSS na pasta "public";
+//Outra opção seria alterar as propriedades do "body" no arquivo "index.html" na pasta "public".
+//Nesse arquivo "index.html", alterações podem ser feitas "inline", incorporadas ou externas. 
+
+export default function App() {
+
+  const destaque_texto = {
+    color: '#00f',
+    fontSize: '3em',
+  }
+
+  return (
+    <>
+
+      <Header/>
+      <Corpo/>
+
+      <Dados
+
+        canal=' CFB'
+        youtube=' Conteúdo de "utube": CFB Cursos.'
+        curso=' React'
+        canal_2={channel}
+        youtube_2={utube}
+        curso_2={course}
+        
+      />
+
+        <section className='seção'>
+
+          <h1 style={{color: '#f00', fontSize: '5em'}}>CFB Cursos</h1>
+          <h2 style={destaque_texto}>Curso de React</h2>
+          <p className='texto'>Se inscreva no nosso canal e nos siga no Instagram.</p>
+
+          <a href='www.youtube.com/cfbcursos' target='_blank'>CFB Cursos no YouTube.</a>
+
+        </section>
+
+    </>
+  )
+}
+
+Aula 08
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React from 'react'
+
+//Importação do arquivo CSS:
+
+import './app01.css'
+
+//Inserção de CSS: A inserção de CSS pode ser feita "inline", incorporado ou externo.
+
+//Em React, se sugere a utilização de classes para formatações de páginas.
+
+//Em React, caso a formatação CSS seja feita "inline" ou incorporada, ele seguirá a mesma notação do JS;
+//Caso seja CSS externo, a notação será a mesma do CSS.
+//Para separar as diferentes formatações, em React, usamo vírgula (,) e não ponto e vírgula (;).
+//Se usa chaves duplas quando a formatação for feita através do CSS "inline";
+//Quando não for o caso, não é necessário usar chaves duplas.
+
+//Criando constantes com códigos para formatação e, posteriormente aplicando-as à página, configura o equivalente ao CSS incorporado.
+
+//Para se trabalhar com o CSS externo, se pode usar o "App.css" ou criar um novo arquivo com a extenção "css".
+
+//Caso o arquivo CSS seja importado para o componente-pai, não será necessário importá-lo para os demais componentes da página.
+
+//Em React, para aplicação de classes, diferentemente de CSS, usamos "className".
+
+//Para formatar o "body" da página, se pode criar um arquivo CSS na pasta "public";
+//Outra opção seria alterar as propriedades do "body" no arquivo "index.html" na pasta "public".
+//Nesse arquivo "index.html", alterações podem ser feitas "inline", incorporadas ou externas.
+
+//O React renderiza somente os componentes que sofreram algum tipo de alteração - o que contribui para o aumento de desempenho do React.
+
+import Relógio from './componentes/relógio.js'
+
+//A função "tick" foi declarada no "index.js" para garantir que a página inteira seja carregada de acordo com "setInterval".
+
+export default function App() {
+
+  const destaque_texto = {
+    color: '#00f',
+    fontSize: '3em',
+  }
+
+  return (
+
+    <>
+
+      <section className='seção'>
+	
+	<Relógio/>
+	
+        <h1 style={{color: '#f00', fontSize: '5em'}}>CFB Cursos</h1>
+        <h2 style={destaque_texto}>Curso de React</h2>
+        <p className='texto'>Se inscreva no nosso canal e nos siga no Instagram.</p>
+
+        <a href='www.youtube.com/cfbcursos' target='_blank'>CFB Cursos no YouTube.</a>
+
+      </section>
+
+    </>
+
+  )
+}
+
+Aula 09
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+//Fazendo a importação de "state":
+
+import React, {useState} from 'react'
+import './App.js'
+
+//"state", basicamente, armazena valores de propriedades de um componente.
+//Quando o estado destes componentes muda, eles serão renderizados novamento.
+//Isso não vale para variáveis comuns.
+//Usamos o "state" associado a uma variável que, toda vez que for atualizada, terá o seu container renderizado novamente.
+//Antigamente, "state" só podia ser usado com componentes de classe.
+//Hoje em dia, "state" também pode ser usado com componentes funcionais.
+
+import Número from './componentes/número'
+
+export default function App() {
+  
+  //Regra para criar um "state": 1ª: uma constante; 2ª: o nome do estado; 3ª: a função que irá alterar o estado (o nome é facultativo):
+
+  const [número, set_number] = useState(10)
+
+  //Diferença entre usar "state" e variáveis: ao se passar um novo valor para uma variável, a atualização não será renderizada.
+  //Isso se deve ao fato d'a variável não estar relacionada com o componente que contem o valor mudado.
+  //Esse problema é corrigido por "state".
+
+  let number = 10
+
+  //Teste:
+
+  const number100 = () => {
+    number = 100
+    console.log(number)
+
+    //Embora a atualização não seja renderizada, ela aparecerá no "console".
+  }
+
+  return (
+
+    <>
+    
+      <p>Valor do "state" (em "App.js"): {número}.</p>
+      <p>Valor de "(let) número": {number}.</p>
+
+      <button onClick={()=>set_number(100)}>100 ("state")</button>
+      <button onClick={()=>set_number(número+10)}>Somar 10 ("state")</button>
+      <button onClick={()=>number=100}>100</button>
+      <button onClick={()=>number100()}>100</button>
+
+      <Número num={número} setNumber={set_number}/>
+
+    </>
+
+  )
+
+}
+
+Aula 10 / Fazer aula 10.1.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+//Fazendo a importação de "state":
+
+import React, {useState} from 'react'
+import './App.js'
+
+//"state", basicamente, armazena valores de propriedades de um componente.
+//Quando o estado destes componentes muda, eles serão renderizados novamento.
+//Isso não vale para variáveis comuns.
+//Usamos o "state" associado a uma variável que, toda vez que for atualizada, terá o seu container renderizado novamente.
+//Antigamente, "state" só podia ser usado com componentes de classe.
+//Hoje em dia, "state" também pode ser usado com componentes funcionais.
+
+import Número from './componentes/número'
+
+export default function App() {
+  
+  //Regra para criar um "state": 1ª: uma constante; 2ª: o nome do estado; 3ª: a função que irá alterar o estado (o nome é facultativo):
+
+  const [número, set_number] = useState(10)
+
+  //Diferença entre usar "state" e variáveis: ao se passar um novo valor para uma variável, a atualização não será renderizada.
+  //Isso se deve ao fato d'a variável não estar relacionada com o componente que contem o valor mudado.
+  //Esse problema é corrigido por "state".
+
+  let number = 10
+
+  //Teste:
+
+  const number100 = () => {
+    number = 100
+    console.log(number)
+
+    //Embora a atualização não seja renderizada, ela aparecerá no "console".
+  }
+
+  return (
+
+    <>
+    
+      <p>Valor do "state" (em "App.js"): {número}.</p>
+      <Número num={número} set_number={set_number}/>
+
+    </>
+
+  )
+
+}
+
+Aula 10.1
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+import React, {useState} from 'react'
+import green_light from './componentes/Imagens/green.png'
+import red_light from './componentes/Imagens/red.png'
+
+export default function App() {
+
+  const [ligado, set_ligado] = useState(false)
+
+  //Para se evitar erros, a função ("ligado") deve ser chamada por outra função.
+
+  return (
+    <>
+
+      <img style={{width: '50px'}} src={ligado? green_light : red_light}/>
+      
+      <button
+        
+        style={{
+        outline: '1px solid black',
+        border: 'none',
+        marginLeft: '15px'}}
+        onClick={()=>set_ligado(!ligado)}>
+        {ligado? 'Desligar' : 'Ligar'}
+        
+      </button>
+    
+    </>
+  )
+
+}
+
+Aula 11.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React, {useState} from 'react'
+import Led from './componentes/led.js'
+
+//Em React, não é possível cancelar um comportamento padrão usando "returnCancel" (como é possível em HTML).
+//Em React, devemos usar o "preventDefault" (que também funciona em HTML).
+
+export default function App() {
+
+  const [ligado, set_ligado] = useState(false)
+  
+  const cancelar = (objeto) => {
+    return objeto.preventDefault()
+  }
+
+  return (
+    <>
+
+      <Led ligado={ligado} set_ligado={set_ligado}/>
+
+      <a href='http://youtube.com/cfbcursos' target='_blank' onClick={(elemento)=>cancelar(elemento)}>CFB Cursos</a>
+
+    </>
+  )
+
+}
+
+Aula 12.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+import React, {useState} from 'react'
+
+//Renderização condicional:
+
+export default function App() {
+
+  const mensagem_login = () => {
+    return 'Usuário "logado".'
+  }
+
+  const mensagem_logoff = () => {
+    return 'Usuário "deslogado".'
+  }
+
+  const [log, set_log] = useState(false)
+
+  const comprimento = () => {
+    const hora = new Date().getHours()
+
+    if (hora >= 0 && hora < 12) {
+      <p>Bom dia!</p>
+    }
+
+    else if (hora >= 13 && hora <= 18) {
+      <p>Boa tarde!</p>
+    }
+
+    else {
+      <p>Boa noite!</p>
+    }
+  }
+
+  return (
+    <>
+
+      <p>{`Comprimento: ${comprimento()}.`}</p>
+      <p>{`${log? mensagem_login : mensagem_logoff}.`}</p>
+      <button onClick={() => set_log(!log)}>{log? 'Log Off' : 'Log On'}</button>
+
+    </>
+  )
+
+}
+
+Aula 12
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React, {useState} from 'react'
+
+//Renderização condicional:
+
+export default function App() {
+
+  const [cor, set_cor] = useState(1)
+
+  const vermelho = {color: '#f00'}
+  const verde = {color: '#0f0'}
+  const azul = {color: '#00f'}
+
+  const colour = (c) => {
+    if (c == 1) {
+      return vermelho
+    }
+
+    else if (c == 2) {
+      return verde
+    }
+
+    else {
+      return azul
+    }
+  }
+
+  const mudança_de_cor = () => {
+    set_cor(cor + 1)
+    
+    if (cor > 2) {
+      set_cor(1)
+    }
+  }
+
+  //Mudança de cor automática:
+
+  setInterval(mudança_de_cor, 1000)
+
+  return (
+    <>
+
+      <h1 style={colour(cor)}>CFB Cursos</h1>
+      <button onClick={() => mudança_de_cor()}>Mudança de Cor</button>
+
+    </>
+  )
+
+}
+
+Aula 13.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React from 'react'
+
+export default function App() {
+
+  const carros = ['HRV, ', 'Golf, ', 'Focus, ', 'Cruze, ', 'Argo.']
+  
+  const car_list = carros.map(
+    (c) => <p>{c}</p>
+  )
+
+  const car_list_2 = carros.map(
+    (c) => <p>{c}</p>
+  )
+
+  //Retorno do valor e da chave:
+
+  const car_list_3 = carros.map(
+    (c, i) => <li key={i}>{c}</li>
+  )
+
+  const car_list_3 = carros.map(
+    (c, i) => <li key={i}>{i} - {c}</li>
+  )
+
+  //Usando "json" e "map":
+
+  const carros_json = [
+    {categoria: 'Esporte', preço: 'R$110.000,00', modelo: 'Golf GTI'},
+    {categoria: 'Esporte', preço: 'R$120.000,00', modelo: 'Camaro'},
+    {categoria: 'SUV', preço: 'R$85.000,00', modelo: 'HRV'},
+    {categoria: 'SUV', preço: 'R$83.000,00', modelo: 'T-Cross'},
+    {categoria: 'Utilitário', preço: 'R$120.000,00', modelo: 'Hillux'},
+    {categoria: 'Utilitário', preço: 'R$90.000,00', modelo: 'Ranger'},
+  ]
+
+  const carros_json = carros.map(
+    (c, i) => <li key={i}>{i} - Categoria: {c.categoria} - R$: {c.preço} - Modelo: {c.modelo}</li>
+  )
+  
+  return (
+    <>
+
+      {`Lista "carros": ${carros}. <hr>`}
+      {`Lista "car_list": ${car_list}. <hr>`}
+
+      <ul>{`Lista "car_list_2": ${car_list_2}. <hr>`}</ul>
+
+      <ul>{`Lista "car_list_3": ${car_list_3}. <hr>`}</ul>
+
+      <ul>{`Lista "carros_json": ${carros_json}. <hr>`}</ul>
+
+    </>
+  )
+
+}
+
+Aula 13
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React, {useState} from 'react'
+
+//Para usar uma informação passada para um componente do formulário, é preciso usar "state".
+
+export default function App() {
+
+  const [nome, set_nome] = useState('Digite o seu nome aqui')
+
+  const handle_change_nome = (e) => {
+    set_nome(e.target.value)
+  }
+
+  const [carro, set_carro] = useState('HRV')
+
+  return (
+
+    <>
+    
+      <label>Nome: </label>
+      <input type="text" name="nome" value={nome} onChange={(e) => set_nome(e.target.value)}/>
+      <input type="text" name="nome" value={nome} onChange={(e) => handle_change_nome(e)}/>
+      <input type="text" name="nome" value={nome} onChange={(e) => set_nome(e.target.value)}/>
+      
+      <p>Nome digitado: {nome}.</p>
+
+      <hr/>
+
+      <label>Selecione um carro: </label>
+      <select value={carro} onChange={(e) => set_carro(e.target.value)}>
+        
+        <option value='HRV'>HRV</option>
+        <option value='Golf'>Golf</option>
+        <option value='Cruze'>Cruze</option>
+        <option value='Argo'>Argo</option>
+        
+      </select>
+
+      <p>Carro selecionado: {carro}</p>
+
+    </>
+
+  )
+
+}
+
+Aula 14.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React, {useState} from 'react'
+
+export default function App() {
+
+  const [form, set_form] = useState({"nome": "", "curso": "", "ano": ""})
+
+  const handle_function = (e) => {
+    if (e.target.getAttribute('name') == 'form_nome') {
+      set_form({"nome": e.target.value, "curso": form.curso, "ano": form.ano})
+    }
+
+    else if (e.target.getAttribute('name') == 'form_curso') {
+      set_form({"nome": form.nome, "curso": e.target.value, "ano": form.ano})
+    }
+
+    else if (e.target.getAttribute('name') == 'form_ano') {
+      set_form({"nome": form.nome, "curso": form.curso, "ano": e.target.value})
+    }
+  }
+
+  return (
+
+    <>
+    
+      <label>Nome: </label>
+      <input type="text" name="form_nome" value={form.nome} onChange={() => handle_function(e)}/><br/>
+
+      <label>Curso: </label>
+      <input type="text" name="form_curso" value={form.curso} onChange={() => handle_function(e)}/><br/>
+
+      <label>Ano: </label>
+      <input type="text" name="form_ano" value={form.ano} onChange={() => handle_function(e)}/><br/>
+      
+      <p>Nome digitado: {form.nome}.</p>
+      <p>Curso digitado: {form.curso}.</p>
+      <p>Ano digitado: {form.ano}.</p>
+
+    </>
+
+  )
+
+}
+
+Aula 15
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React, {useState} from 'react'
+
+//Elevação de "state":
+
+import Notas from './componentes/notas'
+import Resultado from './componentes/resultado'
+
+export default function App() {
+
+  const [nota_01, set_nota_01] = useState(0)
+  const [nota_02, set_nota_02] = useState(0)
+  const [nota_03, set_nota_03] = useState(0)
+  const [nota_04, set_nota_04] = useState(0) 
+
+  return (
+
+    <>
+    
+      <Notas número={1} nota={nota_01} set_nota={set_nota_01}/>
+      <Notas número={2} nota={nota_02} set_nota={set_nota_02}/>
+      <Notas número={3} nota={nota_03} set_nota={set_nota_03}/>
+      <Notas número={4} nota={nota_04} set_nota={set_nota_04}/>
+      <Resultado somaDasNotas={Number(nota_01) + Number(nota_02) + Number(nota_03) + Number(nota_04)}/>
+
+    </>
+
+  )
+
+}
+
+Aula 16
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React, {useState} from 'react'
+
+//Elevação de "state":
+
+import Notas from './componentes/notas'
+import Resultado from './componentes/resultado'
+
+export default function App() {
+
+  const [notas, set_notas] = useState({'nota_01': '0', 'nota_02': '0', 'nota_03': '0', 'nota_04': '0'})
+  
+  const handleSetNotas = (e) => {
+    if (e.target.getAttribute('name') == 'nota_01') {
+      set_notas({'nota_01': e.target.value, 'notas_02': notas.nota_02, 'nota_03': notas.nota_03, 'nota_04': notas.nota_04})
+    }
+
+    else if (e.target.getAttribute('name') == 'nota_02') {
+      set_notas({'nota_01': notas.nota_01, 'notas_02': e.target.value, 'nota_03': notas.nota_03, 'nota_04': notas.nota_04})
+    }
+
+    else if (e.target.getAttribute('nome') == 'nota_03') {
+      set_notas({'nota_01': notas.nota_01, 'notas_02': notas.nota_02, 'nota_03': e.target.value, 'nota_04': notas.nota_04})
+    }
+
+    else if (e.target.getAttribute('nome') == 'nota_04') {
+      set_notas({'nota_01': notas.nota_01, 'notas_02': notas.nota_02, 'nota_03': notas.nota_03, 'nota_04': e.target.value})
+    }
+
+  }
+
+  return (
+
+    <>
+    
+      <Notas número={1} nome={'nota_01'} nota={nota_01} set_nota={handleSetNotas}/>
+      <Notas número={2} nome={'nota_02'} nota={nota_02} set_nota={handleSetNotas}/>
+      <Notas número={3} nome={'nota_03'} nota={nota_03} set_nota={handleSetNotas}/>
+      <Notas número={4} nome={'nota_04'} nota={nota_04} set_nota={handleSetNotas}/>
+      <Resultado somaDasNotas={Number(notas.nota_01) + Number(notas.nota_02) + Number(notas.nota_03) + Number(notas.nota_04)}/>
+
+    </>
+
+  )
+
+}
+
+Aula 17
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React from 'react'
+
+//Contenção é um elemento "props" que nos permite descobrir/obter os filhos de um determinado elemento.
+//Este elemento "props" (referido acima) se trata de um "array" contendo os elementos-filhos de um componente.
+
+import Caixa from './componentes/caixa'
+import Canal from './componentes/canal'
+
+export default function App() {
+
+  return (
+
+    <>
+    
+      <Caixa site='www.cfbcursos.com.br'>
+
+        <h1>CFB Cursos</h1>
+
+        <Canal/>
+          <p>Curso de React.</p>
+
+      </Caixa>
+
+    </>
+
+  )
+
+}
+
+Aula 18
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React, {useState, useEffect} from 'react'
+
+//Assim como "useState", "useEffect" deve ser importado.
+//"useEffect" é um "hook" que será chamada assim que a página for carregada e/ou atualizada.
+
+export default function App() {
+
+  const [contagem, set_count] = useState(0)
+
+  useEffect(
+    () => {
+      console.log('Página carregada.')
+      document.title = `Contagem: ${contagem}`
+    }
+  )
+
+  return (
+
+    <>
+    
+      <p>Contagem: {contagem}</p>
+      <button onClick={() => set_count(contagem+1)}>Contar</button>
+
+    </>
+
+  )
+
+}
+
+Aula 19
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React, {useState} from 'react'
+
+export default function App() {
+
+  //Caso a chave não exista, ela será criada; caso exista, seu valor será substituído.
+
+  localStorage.setItem('nome', 'Ademir')
+  localStorage.setItem('nome', 'Ramos')
+  localStorage.getItem('nome')
+  localStorage.removeItem('nome')
+
+  const [nome, nome_set] = useState()
+
+  const armazenar = (chave, valor) => {
+    localStorage.setItem(chave, valor)
+  }
+
+  const consultar = (chave) => {
+    alert(localStorage.getItem(chave))
+  }
+
+  const apagar = (chave) => {
+    localStorage.removeItem(chave)
+  }
+
+  return (
+
+    <>
+    
+      <label>Digite o nome: </label><br/>
+      <input type='text' value={nome} onChange={(e)=>set_nome(e.target.value)}></input><br/>
+
+      <button onClick={()=>armazenar('1ª nome', nome)}>Gravar</button>
+      <button onClick={()=>consultar('1ª nome')}>Consultar</button>
+      <button onClick={()=>apagar('1ª nome')}>Apagar</button>
+
+    </>
+
+  )
+
+}
+
+Aula 21
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React from 'react'
+
+//Componentes de Classe:
+
+import Carro from './componentes/carro'
+
+export default function App() {
+
+  return (
+
+    <>
+
+      <h1>Componentes de Classe</h1>
+
+      <Carro/>
+
+      <p>Acima, temos o conteúdo da aula 22; abaixo, temos o da aula 23.</p>
+
+      <h1>Componentes de Classe</h1>
+
+      <Carro fator={1}/>
+
+    </>
+
+  )
+
+}
+
+Aula 22
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React, {useState} from 'react'
+import Carro from './componentes/carro2'
+import { useState } from 'react'
+
+export default function App() {
+
+  const [carro, set_carro] = useState(true)
+  const mostrarOcultarCarro = () => {
+    set_carro(!carro) //Alternância.
+  }
+
+  return (
+
+    <>
+
+      <h1>Componentes de Classe</h1>
+
+      {carro? <Carro fator={10}/> : ''}
+
+      <button onClick={()=>mostrarOcultarCarro()}>Remover</button>
+
+    </>
+
+  )
+
+}
+
+Aula 25
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React, {useState} from 'react'
+import Globais from './componentes/globais'
+import Info from './componentes/info'
+
+export default function App() {
+
+  const [resumo, set_resumo] = useState(Globais.resumo)
+
+  const gravar_resumo = () => {
+    Globais.resumo = resumo
+  }
+
+  const ver_resumo = () => {
+    alert(Globais.resumo)
+  }
+
+  return (
+
+    <>
+
+      <Info/>
+
+      <hr/>
+
+      <p>{`Canal: ${Globais.canal}.`}</p>
+      <p>{`Curso: ${Globais.curso}.`}</p>
+      <p>{`Ano: ${Globais.ano}.`}</p>
+
+      <hr/>
+
+      <input type='text' size='100' value={resumo} onChange={(e)=>set_resumo(e.target.value)}/>
+
+      <br/><br/>
+
+      <button onClick={()=>gravar_resumo()}>Gravar Resumo</button>
+      <button onClick={()=>ver_resumo()}>Ver Resumo</button>
+
+    </>
+
+  )
+
+}
+
+Aula 27
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React, {useState, useEffect} from 'react'
+import Page_1 from './componentes/page1'
+import Page_2 from './componentes/page2'
+
+export default function App() {
+
+  const [página, set_página] = useState(0)
+
+  useEffect(
+    () => {
+      const url = window.location.href //Capturando a URL da página.
+      const resultado = url.split('?') //Transformando a URL em um "array" através de "split()".
+      set_página(res[1])
+    }
+  )
+
+  const links_páginas = (p) => {
+    if (p == 1) {
+      window.open('http://localhost:3000?1', '_self')
+      
+      //Interrogações fazem passagem de parâmetros (só para lembrar).
+
+      //Ao invés de "localhost", também poderíamos usar "http://127.0.0.1"; localhost = 127.0.0.1.
+    }
+
+    else if (p == 2) {
+      window.open('http://localhost:3000?2', '_self')
+    }
+  }
+
+  const retornar_página = () => {
+    if (página == 1) {
+      return <Page_1/>
+    }
+
+    else if (página == 2) {
+      return <Page_2/>
+    }
+
+    //"return" somente retorna um único componente: 
+
+    else {
+
+      return <div>
+
+        <button onClick={()=>links_páginas(1)}>Página 1</button>
+        <button onClick={()=>links_páginas(2)}>Página 2</button>
+
+      </div>
+    }
+  }
+
+  return (
+
+    <>
+
+      {retornar_página()}
+
+    </>
+
+  )
+
+}
+
+Aula 28
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React, {useState} from 'react'
+
+const carros = [
+  {categoria: 'Esporte', preço: 'R$110,000,00', modelo: 'Golf GTI'},
+  {categoria: 'Esporte', preço: 'R$120,000,00', modelo: 'Camaro'},
+  {categoria: 'SUV', preço: 'R$85,000,00', modelo: 'HRV'},
+  {categoria: 'SUV', preço: 'R$83,000,00', modelo: 'T-Cross'},
+  {categoria: 'Utilitário', preço: 'R$125,000,00', modelo: 'Hillux'},
+  {categoria: 'Utilitário', preço: 'R$90,000,00', modelo: 'Ranger'}
+]
+
+const linhas = (cat) => {
+  
+  const li = []
+  
+  carros.forEach(
+    (car) => {
+      if (car.categoria.toUpperCase() == cat.toUpperCase() || car.toUpperCase() == '') {
+        li.push(
+          <tr>
+
+            <td>{car.categoria}</td>
+            <td>{car.preço}</td>
+            <td>{car.modelo}</td>
+
+          </tr>
+        )
+      }
+    }
+  )
+
+  return li
+
+}
+
+const carsTable = (cat) => {
+  return (
+    <table border='1' style={{borderCollapse: 'collapse'}}>
+
+      <thead>
+
+        <tr>
+
+          <th>Categoria</th>
+          <th>Preço</th>
+          <th>Modelo</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        {linhas()}
+
+      </tbody>
+
+    </table>
+  )
+}
+
+const classSurvey = (cat, state_cat) => {
+  return (
+    <div>
+
+      <label style={{marginRight: '10px'}}>Digite uma categoria:</label>
+      <input type='text' value={cat} onChange={(e)=>state_cat(e.target.value)}/>
+
+    </div>
+  )
+}
+
+export default function App() {
+
+  const [categoria, set_categoria] = useState('')
+
+  return (
+
+    <>
+
+      {classSurvey(categoria, set_categoria)}
+
+      <br/>
+
+      {carsTable(categoria)}
+
+    </>
+
+  )
+
+}
+
+Aula 29
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React, {useState} from 'react'
+
+const tabelaIMC = () => {
+  return(
+
+    //CSS inline precisa de duas chaves:
+
+    <table border='1' style={{borderCollapse: 'collapse'}}>
+
+      <thead>
+
+        <tr>
+
+          <th>Classificação</th>
+          <th>Resultado (IMC)</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+
+          <td>Abaixo do peso</td>
+          <td>Abaixo de 18,5</td>
+
+        </tr>
+
+        <tr>
+
+          <td>Peso normal</td>
+          <td>Entre de 18,5 e 24,9</td>
+
+        </tr>
+
+        <tr>
+
+          <td>Sobrepeso</td>
+          <td>Entre 25 e 29,9</td>
+
+        </tr>
+
+        <tr>
+
+          <td>Obesidade grau I</td>
+          <td>Entre 30 e 34,9</td>
+
+        </tr>
+
+        <tr>
+
+          <td>Obesidade grau II</td>
+          <td>Entre 35 e 39,9</td>
+
+        </tr>
+
+        <tr>
+
+          <td>Obesidade grau III ou mórbida</td>
+          <td>Maior que 40</td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  )
+}
+
+const peso_componente = (p, set_p) => {
+  return(
+    
+    <div>
+
+      <label>Peso: <input type='text' value={p} onChange={(e)=>{set_p(e.target.value)}}/></label>
+
+    </div>
+
+  )
+}
+
+const altura_componente = (a, set_a) => {
+  return(
+    
+    <div>
+
+      <label>Altura: <input type='text' value={a} onChange={(e)=>{set_a(e.target.value)}}/></label>
+
+    </div>
+
+  )
+}
+
+const cálculo = (p, a, set_resultado) => {
+  
+  const calcular = () => {
+    set_resultado(p / (a * a))
+  }
+  
+  return(
+    
+    <div>
+
+      <button onClick={calcular()}>Calcular IMC</button>
+
+    </div>
+
+  )
+
+}
+
+const resultado_componente = (r) => {
+  return(
+    
+    <div>
+
+      <p>Resultado: {r.toFixed(2)}</p>
+
+    </div>
+
+  )
+}
+
+export default function App() {
+
+  const [peso, set_peso] = useState(0)
+  const [altura, set_altura] = useState(0)
+  const [resultado, set_resultado] = useState(0)
+
+  return (
+
+    <>
+
+      {peso_componente(peso, set_peso)}
+      {altura_componente(altura, set_altura)}
+      {cálculo(peso, altura, set_resultado)}
+      {resultado_componente(resultado)}
+      {tabelaIMC()}
+
+    </>
+
+  )
+
+}
+
+Aula 30
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React, {useState} from 'react'
+import TabelaIMC from './componentes/tabelaimc'
+import Peso from './componentes/peso'
+import Altura from './componentes/altura'
+import CalcularIMC from './componentes/calcularimc'
+import ResultadoIMC from './componentes/resultadoimc'
+
+export default function App() {
+
+  const [peso, set_peso] = useState(0)
+  const [altura, set_altura] = useState(0)
+  const [resultado, set_resultado] = useState(0)
+
+  return (
+
+    <>
+
+      <Peso p={peso} set_p={set_peso}/>
+      <Altura a={altura} set_a={set_altura}/>
+      <CalcularIMC p={peso} a={altura} set_r={set_resultado}/>
+      <ResultadoIMC r={resultado}/>
+      <TabelaIMC/>
+
+    </>
+
+  )
+
+}
+
+Aula 31
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React, {useState} from 'react'
+
+export default function App() {
+
+  const [telaValor, set_telaValor] = useState('')
+  const [resultado, set_resultado] = useState(0)
+  const [acumulador, set_acumulador] = useState(0)
+  const [operação, set_operação] = useState(false)
+
+  //Componentes:
+
+  const tela = (valor, resultado) => {
+    return(
+
+      <div style={css_tela}>
+
+        <span style={cssTelaOperação}>{valor}</span>
+        <span style={cssTelaResultado}>{resultado}</span>
+
+      </div>
+
+    )
+  }
+
+  const botão = (label_b, onclick_b) => {
+    return(
+      <button style={css_botão} onClick={onclick_b}>{label_b}</button>
+    )
+  }
+
+  //Funções:
+
+  const adicionar_digito = (d) => {
+    if ((d == '+' || d == '-' || d == '*' || d == '/') && operação) {
+      console.log('+-*/')
+      set_operação(false)
+      set_telaValor(resultado + d)
+      return
+    }
+
+    if (operação) {
+      set_telaValor(d)
+      set_operação(false)
+      return
+    }
+
+    const valorDigitadoNaTela = telaValor + d
+    set_telaValor(valorDigitadoNaTela)
+  }
+
+  const limpar_memória = () => {
+    set_operação(false)
+    telaValor('')
+    set_resultado(0)
+    set_acumulador(0)
+    return
+  }
+
+  const operation = (op) => {
+    if (op == 'bs') {
+      let vTela = telaValor
+      vTela = vTela.substring(0, (vTela.length - 1))
+      set_telaValor(vTela)
+      set_operação(false)
+      return
+    }
+
+    try {
+      const r = eval(telaValor) //"eval()": avalia uma expressão e retorna o seu resultado.
+      set_acumulador(r)
+      set_resultado(r)
+      set_operação(true)
+    }
+
+    catch {
+      set_resultado('Erro!')
+    }
+  }
+
+  //Estilos:
+
+  const css_container = {
+    display: 'flex',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    flexDirection: 'column',
+    width: 300,
+    border: '1px solid black'
+  }
+
+  const css_botões = {
+    flexDirection: 'row',
+    flexWrap: 'wrap'
+  }
+
+  const css_tela = {
+    display: 'flex',
+    paddingLeft: 20,
+    paddingRight: 20,
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    backgroundColor: '#444',
+    flexDirection: 'column',
+    width: 260
+  }
+
+  const cssTelaOperação = {
+    fontSize: 25,
+    color: '#fff',
+    height: 20
+  }
+
+  const cssTelaResultado = {
+    fontSize: 50,
+    color: '#fff'
+  }
+
+  const css_botão = {
+    fontSize: 30,
+    height: 75,
+    width: 75,
+    padding: 20,
+    backgroundColor: '#000',
+    color: '#fff',
+    borderColor: '#000',
+    textAlign: 'center',
+    outline: 'none'
+  }
+
+  return (
+
+    <>
+
+      <div style={css_container}>
+
+        <h1>Calculadora Matemática Simples</h1>
+
+        {tela(telaValor, resultado)}
+
+        <div style={css_botões}>
+
+          {botão('AC', limpar_memória) /*AC: Limpa a calculadora.*/}
+          {botão ('(', ()=>adicionar_digito('('))}
+          {botão (')', ()=>adicionar_digito(')'))}
+          {botão ('/', ()=>adicionar_digito('/'))}
+          {botão ('7', ()=>adicionar_digito('7'))}
+          {botão ('8', ()=>adicionar_digito('8'))}
+          {botão ('9', ()=>adicionar_digito('9'))}
+          {botão ('*', ()=>adicionar_digito('*'))}
+          {botão ('4', ()=>adicionar_digito('4'))}
+          {botão ('5', ()=>adicionar_digito('5'))}
+          {botão ('6', ()=>adicionar_digito('6'))}
+          {botão ('-', ()=>adicionar_digito('-'))}
+          {botão ('1', ()=>adicionar_digito('1'))}
+          {botão ('2', ()=>adicionar_digito('2'))}
+          {botão ('3', ()=>adicionar_digito('3'))}
+          {botão ('+', ()=>adicionar_digito('+'))}
+          {botão ('0', ()=>adicionar_digito('0'))}
+          {botão ('.', ()=>adicionar_digito('.'))}
+          {botão ('BS', ()=>operation('bs'))}
+          {botão ('=', ()=>operation('='))}
+
+        </div>
+
+      </div>
+    
+    </>
+  )
+
+}
+
+Aula 34
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React, {useState} from 'react'
+
+export default function App() {
+
+  //Estilos:
+
+  const tabuleiro = {
+    display: 'flex',
+    flexDirection: 'column'
+  }
+
+  const tabuleiro_linha = {
+    display: 'flex',
+    flexDirection: 'row',
+  }
+
+  const casa = {
+    width: 100,
+    height: 100,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    cursor: 'pointer',
+    fontSize: 60,
+    border: '1px solid black'
+  }
+
+  //States
+
+  const jogo_inicial = [['', '', ''], ['', '', ''], ['', '', '']]
+  const [jogo, set_jogo] = useState(jogo_inicial)
+  const [simboloAtual, set_simboloAtual] = useState('X')
+  const [jogando, set_jogando] = useState(true)
+  
+  //Componentes:
+
+  const board = (j) => {
+    return(
+
+      <div style={tabuleiro}>
+
+        <div style={tabuleiro_linha}>
+
+          <div style={casa} data-posição='0-0' onClick={(e)=>jogar(e)}>{j[0][0]}</div>
+          <div style={casa} data-posição='0-1' onClick={(e)=>jogar(e)}>{j[0][1]}</div>
+          <div style={casa} data-posição='0-2' onClick={(e)=>jogar(e)}>{j[0][2]}</div>
+
+        </div>
+
+        <div style={tabuleiro_linha}>
+
+          <div style={casa} data-posição='1-0' onClick={(e)=>jogar(e)}>{j[1][0]}</div>
+          <div style={casa} data-posição='1-1' onClick={(e)=>jogar(e)}>{j[1][1]}</div>
+          <div style={casa} data-posição='1-2' onClick={(e)=>jogar(e)}>{j[1][2]}</div>
+
+        </div>
+
+        <div style={tabuleiro_linha}>
+
+          <div style={casa} data-posição='2-0' onClick={(e)=>jogar(e)}>{j[2][0]}</div>
+          <div style={casa} data-posição='2-1' onClick={(e)=>jogar(e)}>{j[2][1]}</div>
+          <div style={casa} data-posição='2-2' onClick={(e)=>jogar(e)}>{j[2][2]}</div>
+
+        </div>
+
+      </div>
+
+    )
+  }
+
+  //Funções:
+
+  const jogar_novamente = () => {
+    if (!jogando) {
+
+      return <button onClick={()=>reiniciar()}>Jogar Novamente</button>
+  
+    }
+  }
+
+  const verificação_vitória = () => {
+    //Verificação das linhas:
+
+    let pontos = 0
+    let vitória = false
+
+    for (let l = 0; l < 3; l++) {
+      pontos = 0
+
+      for (let c = 0; c < 3; c++) {
+        if (jogo[l][c] == simboloAtual) {
+          pontos++
+        }
+      }
+
+      if (pontos == 3) {
+        vitória = true
+        break
+      }
+    }
+
+    //Verificação das colunas:
+
+    for (let c = 0; c < 3; c++) {
+      pontos = 0
+
+      for (let l = 0; l < 3; l++) {
+        if (jogo[c][l] == simboloAtual) {
+          pontos++
+        }
+      }
+
+      if (pontos == 3) {
+        vitória = true
+        break
+      }
+    }
+
+    //Verificação das diagonais:
+
+    pontos = 0
+
+    for (let d = 0; d < 3; d++) {
+      if (jogo[d][d] == simboloAtual) {
+        pontos++
+      }
+    }
+
+    if (pontos == 3) {
+      vitória = tru
+    }
+
+    pontos = 0
+    let l = 0
+    
+    for (c = 2; c >= 0; c--) {
+      if (jogo[l][c] == simboloAtual) {
+        pontos++
+      }
+
+      l++
+    }
+
+    if (pontos == 3) {
+      vitória = true
+    }
+
+    return vitória
+  }
+
+  const troca_jogador = () => {
+    simboloAtual = 'X'? set_simboloAtual('O') : set_simboloAtual('X')
+  }
+
+  const retorno_posição = (e) => {
+    const p = e.target.getAttribute('data-posição')
+    const posição = [parseInt(p.substring(0, 1)), parseInt(p.substring(1, 2))]
+    return posição
+  }
+
+  const espaço_vazio = (e) => {
+    if (jogo[retorno_posição(e)[0]][retorno_posição(e)[1]] == '') {
+      return true
+    }
+
+    else {
+      return false
+    }
+  }
+
+  const jogar = (e) => {
+    if (jogando) {
+      if (espaço_vazio(e)) {
+        jogo[retorno_posição(e)[0]][retorno_posição(e)[1]] = simboloAtual
+
+        troca_jogador()
+
+        if (verificação_vitória()) {
+          troca_jogador()
+
+          alert(`Jogador ${simboloAtual} venceu a partida!`)
+
+          set_jogando(false)
+        }
+      }
+
+      else {
+        alert('O espaço clicado já foi selecionado.')
+      }
+    }
+  }
+
+  const reiniciar = () => {
+    set_jogando(true)
+
+    set_jogo(jogo_inicial)
+
+    set_simboloAtual('X')
+  }
+
+  return (
+    <>
+      <div>
+
+        <p>Quem joga: {simboloAtual}</p>
+      
+      </div>
+
+      <div>
+
+        {board(jogo)}
+
+      </div>
+
+      <div>
+
+        {jogar_novamente}
+
+      </div>
+    </>
+  )
+}
+
+Aula 37
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React from 'react'
+import Lista_carros from './componentes/lista_carros'
+
+export default function App() {
+
+  return (
+    <>
+    
+      <Lista_carros/>
+
+    </>
+  )
+}
+
+Aula 39 e 40 - Baixar "axios". - Criando uma API.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React from 'react'
+
+//React Router.
+
+import {Switch, Router, Link} from 'react-router-dom'
+
+import Page1 from './componentes/page1'
+import Page2 from './componentes/page2'
+
+export default function App() {
+
+  return (
+    <>
+    
+      <header>
+
+        <Link to='/page1'>Página 1</Link>
+        <Link to='/page2'>Página 2</Link>
+        <Link to='/'>Home</Link>
+
+      </header>
+
+      <main>
+
+        <Switch>
+
+          <Router path='/page1' component={Page1}/>
+          <Router path='/page2' component={Page2}/>
+
+        </Switch>
+
+      </main>
+    
+    </>
+  )
+}
+
+Aula 42
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+import React from 'react'
+
+//A propriedade "key" é muito importante para listas; através dessa propriedade, o React saberá qual elemento será operado.
+
+function lista_números(props) {
+  const num = props.numbers
+
+  const numbers_list = num.map((n)=><li key={n.toString()}>{}</li>)
+
+  return(<ul>{numbers_list}</ul>)
+}
+
+const array_números = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+export default function App() {
+
+  return (
+    <>
+
+      <lista_números numbers={array_números}/>
+    
+    </>
+  )
+}
+
+Aula 43
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
