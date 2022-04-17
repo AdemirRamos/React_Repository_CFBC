@@ -754,6 +754,7 @@ export default function App() {
         <h1>CFB Cursos</h1>
 
         <Canal/>
+	
           <p>Curso de React.</p>
 
       </Caixa>
