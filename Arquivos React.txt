@@ -772,7 +772,7 @@ Aula 18
 import React, {useState, useEffect} from 'react'
 
 //Assim como "useState", "useEffect" deve ser importado.
-//"useEffect" é um "hook" que será chamada assim que a página for carregada e/ou atualizada.
+//"useEffect" é um "hook" que será chamado assim que a página for carregada e/ou atualizada.
 
 export default function App() {
 
