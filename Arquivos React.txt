@@ -92,7 +92,7 @@ const course = ' Conteúdo de "course": Curso de React.'
 
 //Em React, caso a formatação CSS seja feita "inline" ou incorporada, ele seguirá a mesma notação do JS;
 //Caso seja CSS externo, a notação será a mesma do CSS.
-//Para separar as diferentes formatações, em React, usamo vírgula (,) e não ponto e vírgula (;).
+//Para separar as diferentes formatações, em React, usamos vírgula (,) e não ponto e vírgula (;).
 //Se usa chaves duplas quando a formatação for feita através do CSS "inline";
 //Quando não for o caso, não é necessário usar chaves duplas.
 
@@ -162,7 +162,7 @@ import './app01.css'
 
 //Em React, caso a formatação CSS seja feita "inline" ou incorporada, ele seguirá a mesma notação do JS;
 //Caso seja CSS externo, a notação será a mesma do CSS.
-//Para separar as diferentes formatações, em React, usamo vírgula (,) e não ponto e vírgula (;).
+//Para separar as diferentes formatações, em React, usamos vírgula (,) e não ponto e vírgula (;).
 //Se usa chaves duplas quando a formatação for feita através do CSS "inline";
 //Quando não for o caso, não é necessário usar chaves duplas.
 
@@ -222,7 +222,7 @@ import React, {useState} from 'react'
 import './App.js'
 
 //"state", basicamente, armazena valores de propriedades de um componente.
-//Quando o estado destes componentes muda, eles serão renderizados novamento.
+//Quando o (s) estado (s) deste (s) componentes muda (m), ele (s) será (ão) renderizado (s) novamente.
 //Isso não vale para variáveis comuns.
 //Usamos o "state" associado a uma variável que, toda vez que for atualizada, terá o seu container renderizado novamente.
 //Antigamente, "state" só podia ser usado com componentes de classe.
