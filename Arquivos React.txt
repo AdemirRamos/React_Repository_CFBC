@@ -281,7 +281,7 @@ import React, {useState} from 'react'
 import './App.js'
 
 //"state", basicamente, armazena valores de propriedades de um componente.
-//Quando o estado destes componentes muda, eles serão renderizados novamento.
+//Quando o (s) estado (s) deste (s) componentes muda (m), ele (s) será (ão) renderizado (s) novamente.
 //Isso não vale para variáveis comuns.
 //Usamos o "state" associado a uma variável que, toda vez que for atualizada, terá o seu container renderizado novamente.
 //Antigamente, "state" só podia ser usado com componentes de classe.
